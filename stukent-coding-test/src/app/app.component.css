@@ -103,3 +103,12 @@
     margin-bottom: -15px;
     height: 50px;
 }
+
+.details-warning-message {
+    background-color: rgb(220, 133, 133);
+    border-top: 2px solid rgb(187, 93, 93);
+    border-bottom: 2px solid rgb(155, 77, 77);;
+    display: flex;
+    justify-content:center;
+    margin-top: 30px;
+}

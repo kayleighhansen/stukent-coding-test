@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+// import { NgReduxModule, NgRedux } from '@angular-redux/store';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -32,7 +33,7 @@ import { DetailsComponent } from './details/details.component';
     MatDividerModule,
     AppRoutingModule,
     HttpClientModule,
-    // WeatherService
+    // NgReduxModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

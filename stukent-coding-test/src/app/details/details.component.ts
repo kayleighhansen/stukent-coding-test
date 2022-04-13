@@ -30,6 +30,7 @@ export class DetailsComponent implements OnInit {
   vis_km: any;
   name: any;
   state: any;
+  errorMessage: boolean;
 
   constructor(public weatherService: WeatherService) { }
 
@@ -38,7 +39,9 @@ export class DetailsComponent implements OnInit {
 
     this.weatherService.getWeatherByLocation(this.location).subscribe(res => {
       console.log(Object.values(res));
-      
+
+      this.errorMessage = false;
+
       const current = Object.values(res)[1];
       const location = Object.values(res)[0];
 
@@ -72,6 +75,18 @@ export class DetailsComponent implements OnInit {
       this.humidity = current.humidity;
       this.vis_miles = current.vis_miles;
       this.vis_km = current.vis_km;
+    },
+    (error) => {
+
+      console.log('error caught in component');
+
+      console.log(error);
+
+      this.errorMessage = true;
+
+      console.log(this.errorMessage);
+
+      //throw error;   
     });
 
   }

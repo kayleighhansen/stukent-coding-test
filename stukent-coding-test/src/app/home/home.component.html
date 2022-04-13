@@ -5,13 +5,13 @@
 <div class="search-bar-container">
     <div>
       <input type="text" class="search-bar" placeholder="Zip Code or City Name">
-      <button mat-button type="button" class="search-bar-submit">Search</button>
+      <button mat-button type="button" class="search-bar-submit">Add</button>
     </div>
   </div>
 
   <div class="previous-searches-container">
     <p>Previous Searches</p>
-    <mat-accordion *ngFor="let data of dataList; let i = index" [data]="data">
-      <app-panel [data]="dataList[i]"></app-panel>
+    <mat-accordion *ngFor="let data of dataList" [data]="data">
+      <app-panel [data]="data"></app-panel>
     </mat-accordion>
   </div>

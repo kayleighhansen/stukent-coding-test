@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.dataList = ["Rexburg-Idaho", "Bristow-VA", "NewYork-NewYork", "Nashville-TN"];
+    this.dataList = ["Rexburg-Idaho", "Bristow-VA", "New York City", "Nashville-TN"];
 
   }
 }

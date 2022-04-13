@@ -2,23 +2,35 @@
     <a class="details-back" href="./home">Back to Home</a>
 </div>
 
-<h3 class="details-page-header">{{this.name}} {{this.state}}</h3>
-
-<div class="details-grid-container">
-    <div>
-        <p class="weather-condition-details">{{this.condition}} <img src="{{this.condition_icon}}" alt="weather-icon" class="details-icon"></p>
-        <p><span class="details-header">Last Updated:</span> {{ this.month }}, {{ this.day }} {{ this.year }} {{ this.time }}</p>
-        <p><span class="details-header">Temperature:</span> {{this.temperature_f}}&#176;F ({{this.temperature_c}}&#176;C )</p>
-        <p><span class="details-header">Feels Like:</span> {{this.feelslike_f}}&#176;F ({{this.feelslike_c}}&#176;C)</p>
-        <p><span class="details-header">Wind Speed:</span> {{this.wind_mph}} mph ({{this.wind_kph}} kph)</p>
-        <p><span class="details-header">Wind Direction:</span> {{this.wind_dir}}</p>
-        <p><span class="details-header">Pressure:</span> {{this.pressure_in}} inches ({{this.pressure_mb}} mb)</p>
-        <p><span class="details-header">Precipitation:</span> 10 inches (100 mm)</p>
-        <p><span class="details-header">Humidity:</span> {{this.humidity}}%</p>
-        <p><span class="details-header">Visibility:</span> {{this.vis_miles}} miles ({{this.vis_km}} km)</p>
-    </div>
+<div *ngIf="errorMessage == true" class="details-warning-message">
+    <p>This location does not exist</p>
 </div>
 
-<div class="remove-btn-container">
-    <button mat-button class="expansion-remove-btn">Remove Rexburg Idaho</button>
+<div *ngIf="errorMessage == false">
+
+    <h3 class="details-page-header">{{this.name}} {{this.state}}</h3>
+
+     <div class="details-grid-container">
+        <div>
+            <p class="weather-condition-details">{{this.condition}} <img src="{{this.condition_icon}}"
+                    alt="weather-icon" class="details-icon"></p>
+            <p><span class="details-header">Last Updated:</span> {{ this.month }}, {{ this.day }} {{ this.year }} {{
+                this.time }}</p>
+            <p><span class="details-header">Temperature:</span> {{this.temperature_f}}&#176;F
+                ({{this.temperature_c}}&#176;C )</p>
+            <p><span class="details-header">Feels Like:</span> {{this.feelslike_f}}&#176;F ({{this.feelslike_c}}&#176;C)
+            </p>
+            <p><span class="details-header">Wind Speed:</span> {{this.wind_mph}} mph ({{this.wind_kph}} kph)</p>
+            <p><span class="details-header">Wind Direction:</span> {{this.wind_dir}}</p>
+            <p><span class="details-header">Pressure:</span> {{this.pressure_in}} inches ({{this.pressure_mb}} mb)</p>
+            <p><span class="details-header">Precipitation:</span> 10 inches (100 mm)</p>
+            <p><span class="details-header">Humidity:</span> {{this.humidity}}%</p>
+            <p><span class="details-header">Visibility:</span> {{this.vis_miles}} miles ({{this.vis_km}} km)</p>
+        </div>
+    </div> 
+
+    <div class="remove-btn-container">
+        <button mat-button class="expansion-remove-btn">Remove Rexburg Idaho</button>
+    </div>
+
 </div>
