@@ -1,0 +1,21 @@
+<mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      {{ this.name }}, {{this.state}}
+    </mat-panel-title>
+    <mat-panel-description>
+      {{ this.month }}, {{ this.day }} {{ this.year }}
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <div class="expansion-divider">
+    <li> {{ this.condition }} <img class="panel-icon" src="{{this.condition_icon}}" alt="weather-icon"></li>
+    <li><span class="expansion-data-header">Temperature:</span> {{this.temperature_f}}&#176;F
+      ({{this.temperature_c}}&#176;C )</li>
+    <li><span class="expansion-data-header">Wind Speed:</span> {{this.wind_speed_mph}} mph ({{this.wind_speed_kph}} kph
+      )</li>
+    <li><span class="expansion-data-header">Humidity:</span> {{this.humidity}}%</li>
+    <li><span class="expansion-data-header">Precipitation:</span> {{this.precipitation_in}} inches
+      ({{this.precipitation_mm}} mm)</li>
+    <button mat-button class="expansion-remove-btn" routerLink="{{this.name}}-{{this.state}}">... See More</button>
+  </div>
+</mat-expansion-panel>
