@@ -29,16 +29,17 @@ export class PanelComponent implements OnInit {
   precipitation_mm: any;
   state: any;
 
-  @Input() dataItem: '';
+  @Input() data: string;
+  errorMessage: any;
 
   constructor(public weatherService: WeatherService) { }
 
   ngOnInit(): void { 
 
-    console.log(this.dataItem);
+    console.log(this.data);
 
-    this.weatherService.getWeatherByLocation(location).subscribe(res => {
-      console.log(Object.values(res));
+    this.weatherService.getWeatherByLocation(this.data).subscribe(
+      (res) => {
 
       const location = Object.values(res)[0];
       const current = Object.values(res)[1];
@@ -65,6 +66,14 @@ export class PanelComponent implements OnInit {
       this.humidity = current.humidity;
       this.precipitation_in = current.precip_in;
       this.precipitation_mm = current.precip_mm;
+    },
+    (error) => {
+
+      console.log('error caught in component');
+      console.log(error);
+      this.errorMessage = error;
+
+      //throw error;   
     });
 
   }
