@@ -36,7 +36,7 @@ export class PanelComponent implements OnInit {
 
   ngOnInit(): void { 
 
-    console.log(this.data);
+    // console.log(this.data);
 
     this.weatherService.getWeatherByLocation(this.data).subscribe(
       (res) => {

@@ -1,17 +1,23 @@
 <div class="title">
-    <h1>Weather Search App</h1>
-  </div>
+  <h1>Weather Search App</h1>
+</div>
 
 <div class="search-bar-container">
-    <div>
-      <input type="text" class="search-bar" placeholder="Zip Code or City Name">
-      <button mat-button type="button" class="search-bar-submit">Add</button>
-    </div>
-  </div>
+  <form action="submit">
 
-  <div class="previous-searches-container">
-    <p>Previous Searches</p>
-    <mat-accordion *ngFor="let data of dataList" [data]="data">
-      <app-panel [data]="data"></app-panel>
-    </mat-accordion>
-  </div>
+    <input type="text" class="search-bar" placeholder="Zip Code or City Name" [(ngModel)]="newLocation" name="newLocation" >
+
+    <button mat-button type="button" class="search-bar-submit" (click)="addLocation()" >Add</button>
+
+  </form>
+
+</div>
+
+<p *ngIf="this.warning" class="warning-message">{{this.warning}}</p>
+
+<div class="previous-searches-container">
+  <p>Previous Searches:</p>
+  <mat-accordion *ngFor="let data of dataList" [data]="data">
+    <app-panel [data]="data"></app-panel>
+  </mat-accordion>
+</div>

@@ -15,14 +15,7 @@ export class WeatherService {
 
   getWeatherByLocation(location) {
     this.data = this.http.get("http://api.weatherapi.com/v1/current.json?key=b36a28f69d6044c08c681338221204&q=" + location + "&aqi=no");
-
-    // console.log(this.data);
-
     return this.data;
-
   }
 
-//   handleError(error: HttpErrorResponse) {
-//     return throwError(error);
-// }
 }

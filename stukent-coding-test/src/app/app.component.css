@@ -112,3 +112,10 @@
     justify-content:center;
     margin-top: 30px;
 }
+
+.warning-message {
+    text-align: center;
+    color: darkred;
+    background-color: #f0b1b1;
+    padding: 10px;
+}

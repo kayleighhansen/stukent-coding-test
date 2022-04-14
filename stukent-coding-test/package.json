@@ -11,7 +11,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular-redux/store": "^10.0.0",
+    "@angular-redux/store": "^9.0.0",
     "@angular/animations": "~11.2.11",
     "@angular/cdk": "^11.2.13",
     "@angular/common": "~11.2.11",
@@ -22,7 +22,7 @@
     "@angular/platform-browser": "~11.2.11",
     "@angular/platform-browser-dynamic": "~11.2.11",
     "@angular/router": "~11.2.11",
-    "redux": "^4.1.2",
+    "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.9",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
